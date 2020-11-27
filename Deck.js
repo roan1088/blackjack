@@ -15,6 +15,12 @@ class Deck {
       });
     });
   }
+
+  // Method to draw a card
+  drawCard() {
+    // Draw the card at the current position and increment the current card position
+    return this.cards[this.currentCard++];
+  }
 }
 
 // module.exports = Deck;
