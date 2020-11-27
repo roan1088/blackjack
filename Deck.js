@@ -21,6 +21,19 @@ class Deck {
     // Draw the card at the current position and increment the current card position
     return this.cards[this.currentCard++];
   }
+
+  // Method to shuffle the deck using Fisher–Yates shuffle (modern algorithm)
+  // https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+  shuffle() {
+    for (let i = this.cards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      const temp = this.cards[i]
+      this.cards[i] = this.cards[j]
+      this.cards[j] = temp
+    }
+    // set the current card to 0
+    this.currentCard = 0;
+  }
 }
 
 // module.exports = Deck;
